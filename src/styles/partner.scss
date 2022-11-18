@@ -1,0 +1,47 @@
+.partner{
+  padding: 20px 0 0;
+  &__title{
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: .52px;
+  }
+  &__box {
+    margin-top: 20px;
+    padding: 150px 0 0 100px;
+    border-radius: 60px 60px 0 0;
+    background: url("https://web-static.more.tv/static/icons/moreBanner.a4661ef7..jpg") center/cover no-repeat;
+    &-title{
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.11;
+    }
+    &-desc{
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 60px;
+      text-align: center;
+    }
+  }
+  &__box-row{
+    margin-top: 100px;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+  }
+  &__card{
+    width: calc(33.33333% - 10px);
+    color: #c6c6c6;
+    text-align: center;
+  }
+  &-icon{
+    height: 60px;
+    width: 60px;
+    margin-bottom: 15px;
+  }
+}
+.container-partner{
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 10px;
+}

@@ -1,0 +1,34 @@
+@import "header";
+@import "footer";
+@import "slider";
+@import "partner";
+@import "about";
+@import "partners";
+
+@import "contact";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: Montserrat,sans-serif;
+}
+
+body{
+  background: #141414;
+  color: white;
+}
+.container{
+  max-width: 1380px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+@import "questions";
+//.layout{
+//  display: flex;
+//  min-height: 100vh;
+//  flex-direction: column;
+//  justify-content: space-between;
+//}

@@ -1,0 +1,52 @@
+.footer{
+  padding: 20px 0;
+  &__title{
+    color: white;
+    font-size: 23px;
+    text-align: center ;
+    font-weight: 600;
+  }
+  &__menu{
+    column-gap: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    &-item{
+      padding: 8px 7px 5px 7px;
+      background: #2c2c2c;
+      border-radius: 15px;
+      &-info{
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+
+      }
+    }
+    &-link{
+      background: transparent;
+    }
+  }
+  &__bottom{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-desc{
+      color: #E6E6E6;
+    }
+    &-svg{
+      width: 44px;
+      height: 22px;
+    }
+  }
+}
+.icon{
+  background: white;
+  color: black;
+  width: 24px;
+  height: 22px;
+  border-radius: 8px;
+  padding: 2px;
+
+}

@@ -1,0 +1,57 @@
+.header{
+
+    &__nav{
+      padding: 20px 0 ;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__logo{
+      color: white;
+      display: flex;
+      align-items: center;
+      &-icon{
+        color: #f3344b;
+      }
+    }
+    &__menu{
+      display: flex;
+      align-items: center;
+      column-gap: 50px;
+      &-item{
+        color: white;
+        font-weight: 600 ;
+        font-size: 17px;
+        font-family: Montserrat,sans-serif;
+      }
+    }
+    &__label{
+      position: relative;
+    }
+    &__input{
+      background: #2c2c2c;
+      padding:  5px 0 5px 30px ;
+      border-radius: 30px;
+      border: none;
+      color: white;
+    }
+    &__search{
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      background: transparent;
+      transform: translate(-50%,-50%);
+    }
+    &__btn{
+      background: #2c2c2c;
+      padding: 10px 15px;
+      color: white;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .blue{
+      background: #21a3f6;
+    }
+}
