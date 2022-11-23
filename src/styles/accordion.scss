@@ -1,0 +1,55 @@
+.accordion{
+  &__row{
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    margin-top: 20px;
+  }
+  &__card{
+    padding: 40px 20px;
+    background: #202020;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+  }
+  &__desc{
+    font-size: 20px;
+    font-weight: 700;
+    span{
+      color: #21a4f7;
+    }
+  }
+  &__answer{
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 0 0 0 30px;
+    &-desc{
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.22;
+      position: relative;
+      &::before{
+        content: url("https://web-static.more.tv/static/icons/plus.0d9e6949.svg");
+        position: absolute;
+        top: 0;
+        right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .open{
+    transform: rotate(360deg);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .close{
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: .3s;
+  }
+
+}

@@ -8,6 +8,9 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Questions from "./pages/ Questions/Questions";
+import Trems from "./pages/ Terms/Trems";
+import Confidentiality from "./pages/Confidentiality/Confidentiality";
+import Vacancies from "./pages/Vacancies/Vacancies";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Layout/>}>
               <Route path={"/"} element={<Home/>}/>
+              <Route path={"/trems"} element={<Trems/>}/>
+              <Route path={"/vacancies"} element={<Vacancies/>}/>
+              <Route path={"/confidentiality"} element={<Confidentiality/>}/>
               <Route path={"/questions"} element={<Questions/>}/>
               <Route path={"/contact"} element={<Contact/>}/>
               <Route path={"/about"} element={<About/>}/>

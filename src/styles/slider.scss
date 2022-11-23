@@ -12,6 +12,37 @@
       object-fit: cover;
     }
   }
+  &__card{
+    margin-top: 30px;
+    padding: 30px ;
+    width: 100%;
+    background: #202020;
+    height: 300px;
+    &-desc{
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.54;
+      color: #c6c6c6;
+      margin-top: 9px;
+    }
+    &-title{
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.22;
+      margin-top: 5px;
+    }
+    &-img{
+      width: 59px;
+      height: 59px;
+    }
+  }
+  &__card-name{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    height: 60px;
+  }
+
 
 }
 

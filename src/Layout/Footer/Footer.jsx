@@ -27,13 +27,13 @@ const Footer = () => {
                         <li className="footer__menu-item-info"><Link to={"/questions"} className="footer__menu-item-info">Вопросы и Ответы</Link></li>
                     </ul>
                     <ul className='footer__menu'>
-                        <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Вакансии</Link></li>
-                        <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Подарочный сертификат</Link></li>
+                        <li className="footer__menu-item-info"><Link to={"/vacancies"} className="footer__menu-item-info grey">Вакансии</Link></li>
+                        <li className="footer__menu-item-info"><a className="grey" href="https://moretv.digift.ru/">Подарочный сертификат</a></li>
                         <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Карта сайта</Link></li>
                     </ul>
                     <ul className='footer__menu'>
-                        <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Пользовательское соглашение</Link></li>
-                        <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Политика конфиденциальности</Link></li>
+                        <li className="footer__menu-item-info"><Link to={"/trems"} className="footer__menu-item-info grey">Пользовательское соглашение</Link></li>
+                        <li className="footer__menu-item-info"><Link to={"/confidentiality"} className="footer__menu-item-info grey">Политика конфиденциальности</Link></li>
                     </ul>
                 </div>
 

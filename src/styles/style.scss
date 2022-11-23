@@ -4,8 +4,11 @@
 @import "partner";
 @import "about";
 @import "partners";
-
+@import "trems";
 @import "contact";
+@import "m3";
+@import "map";
+@import "accordion";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap');
 *{
   padding: 0;
@@ -24,6 +27,19 @@ body{
   max-width: 1380px;
   padding: 0 20px;
   margin: 0 auto;
+}
+.container__small{
+  max-width: 740px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.container__center{
+  max-width: 980px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.center{
+  text-align: center;
 }
 @import "questions";
 //.layout{

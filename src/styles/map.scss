@@ -1,0 +1,33 @@
+.map{
+  &__desc{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  &__row{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+  }
+  &__car{
+    margin-top: 20px;
+    border-radius: 30px;
+    height: 510px;
+    width: 100%;
+    background: url("https://web-static.more.tv/static/icons/map.d62bb6b8..jpg") center/cover;
+  }
+  &__link{
+    color: white;
+    text-align: center;
+    display: flex;
+    margin: 20px 0 50px 0;
+    justify-content: center;
+  }
+  &__text{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

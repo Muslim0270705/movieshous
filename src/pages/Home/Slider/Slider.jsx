@@ -46,7 +46,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="slider__block">
+                    <div className="slider__block swiper-slide-active">
                         <img src="https://mf-static-ssl.more.tv/jackal/4773965/bb46cc72-933b-49fd-aafe-289b73942a68_W1920_H771.avif" alt="" className="slider__block-img"/>
                     </div>
                 </SwiperSlide>
