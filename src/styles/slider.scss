@@ -1,17 +1,22 @@
 
 .slider {
-  padding: 30px 40px;
+  padding: 30px 40px 0;
   position: relative;
   &__block {
     width: 100%;
     border-radius: 30px;
+    cursor: pointer;
+
+
     &-img {
       width: 100%;
       height: 506px;
       border-radius: 30px;
       object-fit: cover;
+
     }
   }
+
   &__card{
     margin-top: 30px;
     padding: 30px ;
@@ -45,7 +50,120 @@
 
 
 }
+.slider__title{
+  margin: 40px 0 20px 0 ;
+}
+.slider__img-box{
+  height: 320px;
+  padding: 10px 10px 0;
+  transition: .5s;
 
+  &:hover{
+    padding: 0;
+    transition: .5s;
+    .slider__box-img{
+      border-radius: 0;
+      transition: .5s;
+    }
+    &::before{
+      content: url("https://web-static.more.tv/static/icons/add-to-favorites.a73bfe93.svg");
+      position: absolute;
+      right: 20px;
+      background: gray;
+      opacity: 0.5;
+    }
+
+  }
+}
+.slider__box-img{
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  border-radius: 15px;
+}
+.sliderfilm{
+
+  height: 400px;
+  padding: 0 80px;
+  margin-bottom: 35px;
+  .swiper{
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 90px;
+      left: -20px;
+      background: linear-gradient(90deg,#141414 13%,rgba(27,27,27,0));
+      z-index: 5;
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 90px;
+      right: -20px;
+      background: linear-gradient(270deg,#141414 13%,rgba(27,27,27,0));
+      z-index: 5;
+    }
+  }
+
+  &__title{
+    text-overflow: ellipsis; //образка длинных блоков с текстом
+    overflow: hidden; //прятать выходящий за пределы текст
+    width: 100%; //ширина блока с текстом
+    white-space: nowrap; //запрет на перенос текста
+  }
+  .swiper-button-prev{
+    padding: 30px;
+    background-color: rgba(80,80,80);
+    border-radius: 50%;
+    transition: .5s;
+    opacity: 0.8;
+    position: absolute;
+    top: 40%;
+    left: -50;
+    &::after{
+      content: url("https://web-static.more.tv/static/icons/SsArrow.b5e2ec3e.svg");
+      transform: rotate(180deg);
+      position: absolute;
+      bottom: 3px;
+    }
+  }
+  .swiper-button-next{
+    padding: 30px;
+    background-color: rgba(80,80,80);
+    border-radius: 50%;
+    transition: .5s;
+    opacity: 0.8;
+    position: absolute;
+    top: 40%;
+    right: -5;
+
+    &::after{
+      content: url("https://web-static.more.tv/static/icons/SsArrow.b5e2ec3e.svg ");
+      position: absolute;
+      top: 1px;
+
+    }
+    &:hover{
+      opacity: 1;
+      transition: .5s;
+    }
+  }
+
+  .swiper-slide{
+    opacity: 1;
+  }
+  &__title{
+    margin: 10px 0;
+  }
+}
 
 .swiper-button-prev{
   padding: 40px;

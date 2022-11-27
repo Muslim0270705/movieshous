@@ -1,0 +1,26 @@
+.subscriptions{
+  background: url("https://web-static.more.tv/static/icons/bg-widget@2x.64031cba..jpg") center/cover no-repeat ;
+  text-align: center;
+  padding: 120px 0 100px;
+  &__title{
+    color: var(--white);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+
+  }
+  &__row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
+    justify-content: center;
+    margin:50px 0 30px ;
+  }
+  &__btn{
+    background: #21a4f7;
+    padding: 13px 23px;
+    color: white;
+    border-radius: 13px;
+  }
+}
