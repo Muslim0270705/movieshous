@@ -11,8 +11,22 @@ import Questions from "./pages/ Questions/Questions";
 import Trems from "./pages/ Terms/Trems";
 import Confidentiality from "./pages/Confidentiality/Confidentiality";
 import Vacancies from "./pages/Vacancies/Vacancies";
+import Input from "./pages/Input/Input";
+import Register from "./pages/Register/Register";
+import Create from "./pages/Register/Create/Create";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {loginAccount} from "./redux/reducers/users";
+import Film from "./pages/Film";
 
 function App() {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if(localStorage.getItem("user") !== null){
+            dispatch(loginAccount(JSON.parse(localStorage.getItem("user"))))
+        }
+    },[])
   return (
     <div className="App">
         <Routes>
@@ -25,8 +39,13 @@ function App() {
               <Route path={"/contact"} element={<Contact/>}/>
               <Route path={"/about"} element={<About/>}/>
               <Route path={"/about-us"} element={<AboutUs/>}/>
-              <Route path={"/"} element={<Films/>}/>
+              <Route path={"/films"} element={<Films/>}/>
+              <Route path={"/film/:id"} element={<Film/>}/>
           </Route>
+            <Route path={"/input"} element={<Input/>}/>
+            <Route path={"/register"} element={<Register/>}/>
+            <Route path={"/create"} element={<Create/>}/>
+
         </Routes>
     </div>
   );

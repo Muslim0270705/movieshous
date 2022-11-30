@@ -12,15 +12,15 @@ import {useDispatch, useSelector} from "react-redux";
 const Slider = () => {
     const dispatch = useDispatch()
     const {status,error,data} = useSelector((store) => store.cinema)
+    console.log(data)
     useEffect(() => {
         dispatch(getCinema())
     },[])
+
     return (
         <section className="slider">
-
             <Swiper style={{padding:"0 60px"}}
                 slidesPerView={"auto"}
-                loop={true}
                 autoplay={true}
                 spaceBetween={30}
                 navigation={true}
@@ -33,7 +33,6 @@ const Slider = () => {
                             <>
                                 {
                                     data.map((item) =>(
-
                                         <SwiperSlide>
                                             <div key={item.key} className="slider__block">
                                                 <img src={item.img} alt="" className="slider__block-img"/>

@@ -5,7 +5,7 @@ export const getCinema = createAsyncThunk(
     "cinema/getCinema",
     async (_,{rejectWithValue}) => {
         try {
-            const res = await axios('/data?category=films')
+            const res = await axios(`/data?category=films`)
             if(res.statusText !== 'OK'){
                 throw new Error("Server error !")
             }
@@ -21,7 +21,10 @@ const cinemaSlice = createSlice({
     initialState:{
         data: [],
         dataLength: 0,
-        filter: {},
+        filter: {
+            year: "",
+            genre: ""
+        },
         status: '',
         error: ''
     },
@@ -30,23 +33,30 @@ const cinemaSlice = createSlice({
         //     state.data = action.payload
         //     state.dataLength = action.payload.length
         // }
+            changeYear:(state,action) => {
+                state.filter.year = action.payload
+            },
+            changeGenre: (state,action) => {
+            state.filter.genre = action.payload
+            }
     },
-    extraReducers:{
-      [getCinema.pending] : (state,action) =>{
-          state.status = 'Loading...'
-          state.error = ''
-      },
-      [getCinema.rejected] : (state, action) =>{
-          state.status = 'error'
-          state.error = action.payload
-      },
-      [getCinema.fulfilled] : (state,action) =>{
-          state.status = 'resolve'
-          state.error = ''
-          state.data = action.payload
-          state.dataLength = action.payload.length
-      }
+    extraReducers: {
+        [getCinema.pending] : (state,action) => {
+            state.status = 'loading'
+            state.error = ''
+        },
+        [getCinema.rejected] : (state,action) => {
+            state.status = 'error'
+            state.error = action.payload
+        },
+        [getCinema.fulfilled] : (state,action) => {
+            state.status = 'resolve'
+            state.error = ''
+            state.data = action.payload
+            state.dataLength = action.payload.length
+        }
     }
 })
-export const {} = cinemaSlice.actions
+
+export const {changeYear,changeGenre} = cinemaSlice.actions
 export default  cinemaSlice.reducer

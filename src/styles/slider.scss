@@ -53,6 +53,7 @@
 .slider__title{
   margin: 40px 0 20px 0 ;
 }
+
 .slider__img-box{
   height: 320px;
   padding: 10px 10px 0;
@@ -82,11 +83,12 @@
   border-radius: 15px;
 }
 .sliderfilm{
-
   height: 400px;
-  padding: 0 80px;
+  padding: 0 35px;
   margin-bottom: 35px;
   .swiper{
+
+
     &::before {
       content: "";
       display: block;
