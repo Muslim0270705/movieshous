@@ -1,0 +1,209 @@
+.film {
+  padding: 30px 0;
+  &__video{
+    border: none;
+    width: 100%;
+  }
+  &__vd{
+    background: black;
+
+  }
+
+  &__actor {
+    &-title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &-subtitle {
+      font-size: 17px;
+      line-height: 1.21;
+      display: flex;
+      align-items: center;
+      color: gray;
+      column-gap: 10px;
+    }
+    &-info{
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+    &-box{
+      width: 108px;
+      height: 108px;
+    }
+    &-img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    &-card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-row{
+      margin: 20px 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 30px;
+    }
+    &-name{
+      margin: 5px 0;
+      font-weight: 600;
+      line-height: 1.33;
+
+    }
+    &-nick{
+      font-size: 13px;
+      color: gray;
+      font-weight: 600;
+
+    }
+  }
+  &__genre{
+    &-title{
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+    &-row{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    &-btn{
+      padding: 15px 20px;
+      background: #2c2c2c;
+      color: white;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: .3s;
+      cursor: pointer;
+      &:hover{
+        background: gray;
+        transition: .3s;
+      }
+    }
+  }
+
+  &__desc {
+    margin: 40px 0 0;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 780px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  &__block-img {
+    width: 100%;
+    height: 528px;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 528px;
+    padding: 0 100px;
+    object-fit: cover;
+  }
+
+  &__img-op {
+    width: 100%;
+    opacity: 1;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    display: flex;
+    height: 528px;
+    filter: blur(20px);
+    justify-content: center;
+    margin: 0px auto;
+
+    position: relative;
+    top: 0px;
+    z-index: 0;
+  }
+
+  &__category {
+    padding: 30px 0;
+
+    &-logo {
+      align-self: flex-start;
+      border-radius: 4px;
+      height: 230px;
+      min-width: 160px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+
+    &-title {
+      width: 120px;
+      margin-right: 20px;
+    }
+  }
+
+  &__menu-item {
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.6;
+    align-items: center;
+    color: rgb(143, 143, 143);
+  }
+
+  &__year {
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    border-radius: 6px;
+    color: rgb(230, 230, 230);
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1.6;
+    margin-right: 6px;
+    padding: 3px 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    transition: .5s;
+
+    &:hover {
+      background: gray;
+      transition: .5s;
+    }
+  }
+}
+.framework__logo{
+  display: none;
+}

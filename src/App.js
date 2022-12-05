@@ -39,7 +39,7 @@ function App() {
               <Route path={"/contact"} element={<Contact/>}/>
               <Route path={"/about"} element={<About/>}/>
               <Route path={"/about-us"} element={<AboutUs/>}/>
-              <Route path={"/films"} element={<Films/>}/>
+              <Route path={"/content"} element={<Films/>}/>
               <Route path={"/film/:id"} element={<Film/>}/>
           </Route>
             <Route path={"/input"} element={<Input/>}/>

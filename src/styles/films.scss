@@ -1,5 +1,11 @@
 .films{
   margin: 20px 0;
+  &__sort{
+    height: 400px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
   &__row{
     display: flex;
     align-items: center;

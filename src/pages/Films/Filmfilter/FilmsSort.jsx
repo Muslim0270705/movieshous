@@ -30,9 +30,11 @@ const FilmsSort = () => {
                         label="fasf"
                         onChange={(e) => setGenreState(e.target.value)}
                 >
+                    <MenuItem className="films__filter-item" value={""}>По умолчанию</MenuItem>
                     {
                         genreData.map((item) => (
-                                    <MenuItem className="films__filter-item" value={item.desc}>{item.desc}</MenuItem>
+                                <MenuItem className="films__filter-item" value={item.desc}>{item.desc}</MenuItem>
+
                             )
                         )
                     }
