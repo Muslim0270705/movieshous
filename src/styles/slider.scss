@@ -165,6 +165,59 @@
     margin: 10px 0;
   }
 }
+.sliderfilmsearch{
+  .swiper{
+    &::before {
+      content: "";
+
+    }
+    &::after {
+      content: "";
+
+    }
+    .swiper-slide{
+      opacity: 1;
+    }
+  }
+  .swiper-button-prev{
+    padding: 30px;
+    background-color: rgba(80,80,80);
+    border-radius: 50%;
+    transition: .5s;
+    opacity: 0.8;
+    position: absolute;
+    top: 40%;
+    left: -50;
+    &::after{
+      content: url("https://web-static.more.tv/static/icons/SsArrow.b5e2ec3e.svg");
+      transform: rotate(180deg);
+      position: absolute;
+      bottom: 3px;
+    }
+  }
+  .swiper-button-next {
+    padding: 30px;
+    background-color: rgba(80, 80, 80);
+    border-radius: 50%;
+    transition: .5s;
+    opacity: 0.8;
+    position: absolute;
+    top: 40%;
+    right: -5;
+
+    &::after {
+      content: url("https://web-static.more.tv/static/icons/SsArrow.b5e2ec3e.svg ");
+      position: absolute;
+      top: 1px;
+
+    }
+
+    &:hover {
+      opacity: 1;
+      transition: .5s;
+    }
+  }
+}
 .sliderfilmfrance{
   .swiper{
     &::before {

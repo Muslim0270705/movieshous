@@ -5,7 +5,7 @@ export const getCinema = createAsyncThunk(
     "cinema/getCinema",
     async (filter,{rejectWithValue}) => {
         try {
-            const res = await axios(`/data?${filter?.category.length ? "category=" + filter.category + "&" : ""}${filter?.price.length ? "price=" + filter?.price + '&' : ''}${filter?.year.length ? "year=" +  filter?.year : ''}`)
+            const res = await axios(`/data?${filter?.category?.length ? "category=" + filter?.category + "&" : ""}${filter?.price?.length ? "price=" + filter?.price + '&' : ''}${filter?.year?.length ? "year=" +  filter?.year : '&'}${filter?.search?.length ? "title=" + filter?.search : ''}`)
             if(res.statusText !== 'OK'){
                 throw new Error("Server error !")
             }
@@ -55,7 +55,8 @@ const cinemaSlice = createSlice({
             },
             changePrice: (state,action) => {
             state.filter.price = action.payload
-            }
+            },
+
     },
     extraReducers: {
         [getCinema.pending] : (state,action) => {

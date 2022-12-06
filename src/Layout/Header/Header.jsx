@@ -4,11 +4,13 @@ import {RiMovieFill,RiSearchLine} from "react-icons/ri"
 import {useDispatch, useSelector} from "react-redux";
 import {logOutAccount} from "../../redux/reducers/users";
 import {changeCategory} from "../../redux/reducers/cinema";
+import SliderFilmSearch from "../../pages/Home/SliderFilm/SliderFilmSearch";
 const Header = () => {
     const {user} = useSelector((store) => store.users)
     const dispatch = useDispatch()
     const [categoryState,setCategoryState] = useState("")
     const [active,setActive] = useState(false)
+    const [search,setSearch] = useState(false)
     useEffect( () => {
         dispatch(changeCategory(categoryState)
         )
@@ -16,7 +18,13 @@ const Header = () => {
     const userName = JSON.parse(localStorage.getItem("user"))
     return (
         <header className="header">
-                <div  className="container">
+            <div style={{display: search ? "block" : "none"}} className="overlay">
+                    <div className="popup">
+                        <img onClick={() => setSearch(!search)}  className="overlay__close" src="//web-static.more.tv/static/icons/sprite-e0264260.svg#close-usage" alt=""/>
+                        <SliderFilmSearch props={setSearch}/>
+                    </div>
+            </div>
+            <div  className="container">
                         <div className="header__nav">
                             <Link to={"/"}>
                                 <h1 className="header__logo">
@@ -27,13 +35,13 @@ const Header = () => {
 
                             <ul className="header__menu">
                                 <li onClick={() => setCategoryState("films")}  className="header__menu-item"><Link to={"/content"} className="header__menu-item">ФИЛЬМЫ</Link></li>
-                                <li onClick={() => setCategoryState("series")}  className="header__menu-item"><Link className="header__menu-item">СЕРИАЛЫ</Link></li>
-                                <li onClick={() => setCategoryState("cartoons")}  className="header__menu-item"><Link className="header__menu-item">МУЛЬТФИЛЬМЫ</Link></li>
+                                <li onClick={() => setCategoryState("series")}  className="header__menu-item"><Link to={"/content"} className="header__menu-item">СЕРИАЛЫ</Link></li>
+                                <li onClick={() => setCategoryState("cartoons")}  className="header__menu-item"><Link to={"/content"} className="header__menu-item">МУЛЬТФИЛЬМЫ</Link></li>
                                 <li className="header__menu-item"><Link to={"/about"} className="header__menu-item">О НАС</Link></li>
                             </ul>
                             <label className="header__label">
                                 <RiSearchLine  className="header__search"/>
-                                <input placeholder="Найти" className="header__input" type="text"/>
+                                <input onClick={() => setSearch(!search)} placeholder="Найти" className="header__input" type="text" />
                             </label>
 
                             {
