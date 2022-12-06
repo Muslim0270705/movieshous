@@ -5,7 +5,10 @@ import Slider from "./Slider/Slider";
 import SliderFilm from "./SliderFilm/SliderFilm";
 
 import Subscription from "./Subscriptions/Subscriptions";
-import SliderFilm2 from "./SliderFilm/SliderFilm2";
+import SliderFilmAction from "./SliderFilm/SliderFilmAction";
+import SliderFilmCrime from "./SliderFilm/SliderFilmCrime";
+import SliderFilmAdventure from "./SliderFilm/SliderFilmAdventure";
+import FilmFrance from "./FilmFrance";
 
 
 
@@ -14,15 +17,12 @@ const Home = () => {
     return (
         < >
             <Slider/>
-
             <SliderFilm/>
             <Subscription/>
-            <SliderFilm style={{margin: "0 20px 0 0"}}/>
-            <SliderFilm/>
-            <SliderFilm/>
-            <SliderFilm/>
-            <SliderFilm/>
-            <SliderFilm/>
+            <SliderFilmCrime/>
+            <SliderFilmAdventure/>
+            <SliderFilmAction/>
+            <FilmFrance/>
         </>
     );
 };

@@ -56,7 +56,7 @@ const Header = () => {
                                         <div style={{display: active ? "block" : "none"}} className='header__exit-accordion'>
                                             <div className="header__exit-box">
                                                 <div className="header__exit-box-name">
-                                                    <h3 className="header__exit-box-name-title">Mageza Muslim</h3>
+                                                    <h3 className="header__exit-box-name-title">{userName.name}</h3>
                                                     <p className="header__exit-box-name-email">{userName.email}</p>
                                                 </div>
                                                 <div className="header__exit-box-img">

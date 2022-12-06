@@ -46,14 +46,28 @@ const Register = () => {
             </div>
             <div className="input__popup popup">
                 <form onSubmit={handleSubmit(onSubmit)} noValidate action="" >
-                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 400px"}}>
+                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 450px"}}>
                         Создай аккаунт и получи
                         <br/>
                         30 дней
                         подписки бесплатно
                     </h2>
                     <div className="input__popup">
-
+                        <label>
+                            <input {...register('name',{
+                                required: {
+                                    message: 'Email обязательно к заполнению',
+                                    value: true
+                                },
+                                minLength: {
+                                    message: 'Минимум 10 символа',
+                                    value: 5
+                                }
+                            })} type="name" placeholder="Напишите своё имя"className="input__input"/>
+                            <p className='register__form-error'>
+                                {errors.email && errors.email?.message}
+                            </p>
+                        </label>
                         <label>
                             <input {...register('email',{
                                 required: {

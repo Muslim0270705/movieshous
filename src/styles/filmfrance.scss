@@ -1,0 +1,18 @@
+.filmfrance{
+  height: 702px;
+  position: relative;
+  padding: 150px 0 100px 70px ;
+  &__bag{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 30px;
+    top: 0;
+    left: 0;
+  }
+  &__title{
+    font-size: 75px;
+    color: white;
+  }
+}

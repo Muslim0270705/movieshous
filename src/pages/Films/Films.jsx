@@ -15,19 +15,9 @@ const Films = () => {
         }))
     }, [filter])
 
-    // let bas = data.map((item) => item.content.flat().some(function (v) {
-    //     content.indexOf(v.desc) >= 0 ? a = [...a, v.desc] : a
-    // }))
     let contentFilm = []
-    let deletes = []
 
     const FilterContent = (baz) => {
-        genre.length ? contentFilm.map((item) => {
-                item.genre.flat().filter((el) => {
-                    return el.desc !== genre
-                })
-            })
-            :
         baz.map((item) => {
             item.content.flat().filter((el)=>{
                 if (el.desc === content){

@@ -4,7 +4,8 @@ const userSlice = createSlice({
     name:"user",
     initialState:{
         user:{
-            email:''
+            email:'',
+            name:''
         }
     },
     reducers:{
@@ -13,7 +14,8 @@ const userSlice = createSlice({
         },
         logOutAccount: (state,action)=>{
             state.user ={
-                email: ''
+                email: '',
+                name:''
             }
         }
     }

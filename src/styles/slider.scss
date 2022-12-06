@@ -114,7 +114,6 @@
       z-index: 5;
     }
   }
-
   &__title{
     text-overflow: ellipsis; //образка длинных блоков с текстом
     overflow: hidden; //прятать выходящий за пределы текст
@@ -164,6 +163,21 @@
   }
   &__title{
     margin: 10px 0;
+  }
+}
+.sliderfilmfrance{
+  .swiper{
+    &::before {
+      content: "";
+
+    }
+    &::after {
+      content: "";
+
+    }
+  }
+  .swiper-slide{
+    opacity: 1;
   }
 }
 

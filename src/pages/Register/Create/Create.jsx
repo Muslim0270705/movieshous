@@ -46,7 +46,7 @@ const Create = () => {
             </div>
             <div className="input__popup popup">
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 300px"}}>
+                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 220px"}}>
                         Придумай пароль для входа <br/>
                         на любом устройстве
                     </h2>

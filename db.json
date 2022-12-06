@@ -2873,44 +2873,10 @@
   ],
   "users": [
     {
-      "email": "muslim@gmail.com",
-      "password": "$2a$10$ckFlPstZMc1xPPqX250l3u5/lKQlk7gUQUTMUadkI0vB0PZD1vQAW",
+      "email": "malikdunlza0@gmail.com",
+      "password": "$2a$10$1KGAQj3LV6jKiuMh.4.cG.IOIGuuRaqsf3GU9/fg4BIacB0MDypMu",
+      "name": "Malik lox ",
       "id": 1
-    },
-    {
-      "email": "magezamuslim40@gmail.com",
-      "password": "$2a$10$yYx8OeUcRmLBMgfWo6j3gukdgYScLCrkaeJ9OuMTfs1DC0Plf6uXK",
-      "id": 2
-    },
-    {
-      "email": "Muslim0270705@mail.ru",
-      "password": "$2a$10$cSgEvZHuswD/mlCa7i3xduvn4a6us5Y7ASpLPvzQ6sqhGoZkAXLB.",
-      "id": 3
-    },
-    {
-      "email": "magezamuslim402@gmail.com",
-      "password": "$2a$10$IsVbq6sgGvt85WIjdBdBXO2/Nv4LTD94SgaL3GBPN1yp0A/m2sayS",
-      "id": 4
-    },
-    {
-      "email": "mageza.muslim@gmail.com",
-      "password": "$2a$10$g6z6CtEuqS1yE9fGe2b9su36ujaYfexCi6txlsgFwof1nNsd..VXm",
-      "id": 5
-    },
-    {
-      "email": "magezamuslim26@gmail.com",
-      "password": "$2a$10$speoUvAwO9Rv8PYu5jG3y.UA2zZUp5YCfDiGpPlXlPg.Yg7bOC.oa",
-      "id": 6
-    },
-    {
-      "email": "askar@mail.ru",
-      "password": "$2a$10$ZqDqIstvhi4G3Pcaw83vCOOany3NEgBsyGMVtLfi7DmFfvnpY2ome",
-      "id": 7
-    },
-    {
-      "email": "nurs@mail.ru",
-      "password": "$2a$10$.Qu3l4lCUBX/7.3stHzndOPN3ZBr0Jyp8jdpdvFD9j3PFRr.5y5cq",
-      "id": 8
     }
   ]
 }
