@@ -8,6 +8,10 @@
     background: black;
 
   }
+  &__name{
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__actor {
     &-title {

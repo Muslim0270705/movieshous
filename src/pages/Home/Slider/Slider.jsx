@@ -5,10 +5,7 @@ import "swiper/css"
 import "swiper/css/navigation"
 import {getCinema} from "../../../redux/reducers/cinema";
 import {useDispatch, useSelector} from "react-redux";
-
-
-
-
+import {Link} from "react-router-dom";
 const Slider = () => {
     const dispatch = useDispatch()
     const {status,error,data} = useSelector((store) => store.cinema)
@@ -19,7 +16,7 @@ const Slider = () => {
 
     return (
         <section className="slider">
-            <Swiper style={{padding:"0 60px"}}
+            <Swiper style={{padding:"0 60px 0 60px"}}
                 slidesPerView={"auto"}
                 autoplay={true}
                 spaceBetween={30}
@@ -39,9 +36,11 @@ const Slider = () => {
                                 {
                                     data.map((item) =>(
                                         <SwiperSlide>
-                                            <div key={item.id} className="slider__block">
-                                                <img src={item.img} alt="" className="slider__block-img"/>
-                                            </div>
+                                            <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
+                                                <div key={item.id} className="slider__block">
+                                                    <img src={item.img} alt="" className="slider__block-img"/>
+                                                </div>
+                                            </Link>
                                         </SwiperSlide>
                                     ))
                                 }

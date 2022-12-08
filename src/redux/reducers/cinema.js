@@ -26,11 +26,20 @@ const cinemaSlice = createSlice({
             price:'',
             category:"",
         },
+        favorites:{
+            data:[],
+            dataLength : 0
+        },
+        likes: {
+          data:[],
+          dataLength: 0
+        },
         status: '',
         error: '',
         content: "",
         genre: "",
         country: ""
+
 
     },
     reducers: {
@@ -56,6 +65,22 @@ const cinemaSlice = createSlice({
             changePrice: (state,action) => {
             state.filter.price = action.payload
             },
+            getFavorites: (state,action) => {
+                state.favorites.data = [...state.favorites.data, state.data.find((item) => item.id === action.payload)]
+                state.favorites.dataLength = state.favorites.dataLength + 1
+            },
+            deleteFavorite: (state,action) => {
+                state.favorites.data = state.favorites.data.filter(item => item.id !== action.payload)
+                state.favorites.dataLength = state.favorites.dataLength - 1
+            },
+            getLikes: (state,action) => {
+                state.likes.data = [...state.favorites.data, state.data.find((item) => item.id === action.payload)]
+                state.likes.dataLength = state.favorites.dataLength + 1
+            },
+            deleteLikes: (state,action) => {
+                state.likes.data = state.favorites.data.filter(item => item.id !== action.payload)
+                state.likes.dataLength = state.favorites.dataLength - 1
+            }
 
     },
     extraReducers: {
@@ -76,5 +101,5 @@ const cinemaSlice = createSlice({
     }
 })
 
-export const {changeYear,changeGenre,changeContent,changeCountry,changeCategory,changePrice} = cinemaSlice.actions
+export const {changeYear,changeGenre,changeContent,changeCountry,changeCategory,changePrice,getFavorites,deleteFavorite,getLikes,deleteLikes} = cinemaSlice.actions
 export default  cinemaSlice.reducer

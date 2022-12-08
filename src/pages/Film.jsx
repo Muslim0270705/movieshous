@@ -1,19 +1,18 @@
-import React,{useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {IoIosArrowForward} from "react-icons/io";
 import {Link, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 import {getOneFilm} from "../redux/reducers/getOneFilm";
-import {getCinema} from "../redux/reducers/cinema";
+import {getCinema, getLikes,deleteLikes} from "../redux/reducers/cinema";
 
 const Film = () => {
     const dispatch = useDispatch()
     const params = useParams();
-    const {data} = useSelector((store) => store.cinema)
+    const {data,likes} = useSelector((store) => store.cinema)
     const {status, error,product} = useSelector((store) => store.onefilms);
     let genreData = data.map((item) => item.genre ).flat().filter((item,idx,arr) => arr.map(item => item.desc).indexOf(item.desc) === idx)
     useEffect(() => {
         dispatch(getOneFilm(params.id))
-
     },[]);
     return (
         <section className='film'>
@@ -21,9 +20,20 @@ const Film = () => {
                 <h3 className="about__title">
                     Главная  <IoIosArrowForward/>  Фильм  <IoIosArrowForward/> {product.title}
                 </h3>
-                <h2 className="film__title">
-                    {product.title} смотреть онлайн    <span className="grey">{product.age}+</span>
-                </h2>
+                <div className="film__name">
+                    <h2 className="film__title">
+                        {product.title} смотреть онлайн    <span className="grey">{product.age}+</span>
+
+                    </h2>
+                    <img onClick={() => {
+                        if(likes.data.filter(item => item.id === product.id).length){
+                            dispatch(deleteLikes(product.id))
+                        }else{
+                            dispatch(getLikes(product.id))
+                        }
+                    }} src="https://web-static.more.tv/static/icons/like-icon.3066bdac.svg" alt=""/>
+                </div>
+
 
             </div>
             <div className="film__block-img">

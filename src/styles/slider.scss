@@ -58,29 +58,34 @@
   height: 320px;
   padding: 10px 10px 0;
   transition: .5s;
-
-  &:hover{
+  &:hover {
     padding: 0;
     transition: .5s;
     .slider__box-img{
       border-radius: 0;
       transition: .5s;
     }
-    &::before{
-      content: url("https://web-static.more.tv/static/icons/add-to-favorites.a73bfe93.svg");
-      position: absolute;
-      right: 20px;
-      background: gray;
-      opacity: 0.5;
+    .slider__icon{
+      display: block;
     }
 
   }
+
 }
 .slider__box-img{
   width: 100%;
   height: 100%;
   transition: .5s;
   border-radius: 15px;
+  position: relative;
+}
+.slider__icon{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 10;
+  display: none;
+  
 }
 .sliderfilm{
   height: 400px;

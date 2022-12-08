@@ -2877,6 +2877,12 @@
       "password": "$2a$10$1KGAQj3LV6jKiuMh.4.cG.IOIGuuRaqsf3GU9/fg4BIacB0MDypMu",
       "name": "Malik lox ",
       "id": 1
+    },
+    {
+      "email": "magezamuslim40@gmail.com",
+      "password": "$2a$10$txPWMXVABDq7oux6aW5GjeXfH8BV8GYZNiXEJx8.iXxFge7c0STj6",
+      "name": "Muslim",
+      "id": 2
     }
   ]
 }

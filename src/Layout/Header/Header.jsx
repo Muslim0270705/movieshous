@@ -75,8 +75,10 @@ const Header = () => {
                                                 </div>
                                             </div>
                                             <ul className="header__exit-accordion-menu">
-                                                <li className="header__exit-accordion-menu-item">
-                                                    Избранное
+                                                <li  className="header__exit-accordion-menu-item">
+                                                    <Link className="header__exit-accordion-menu-item" to={"/favorites"}>
+                                                        Избранное
+                                                    </Link>
                                                 </li>
                                                 <li className="header__exit-accordion-menu-item">
                                                     Подписки

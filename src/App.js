@@ -18,6 +18,11 @@ import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {loginAccount} from "./redux/reducers/users";
 import Film from "./pages/Film";
+import Favorites from "./pages/Favorites/Favorites.";
+import Favorite from "./pages/Favorites/Favorite";
+import Ratings from "./pages/Favorites/Ratings";
+import Subscription from "./pages/Favorites/Subscription";
+import LayoutFavorites from "./pages/Favorites/LayoutFavorites";
 
 function App() {
     const dispatch = useDispatch()
@@ -45,7 +50,11 @@ function App() {
             <Route path={"/input"} element={<Input/>}/>
             <Route path={"/register"} element={<Register/>}/>
             <Route path={"/create"} element={<Create/>}/>
-
+            <Route path={"/favorites/"} element={<LayoutFavorites/>}>
+                <Route path={"/favorites/"} element={<Favorite/>}/>
+                <Route path={"/favorites/ratings"} element={<Ratings/>}/>
+                <Route path={"/favorites/subscription"} element={<Subscription/>}/>
+            </Route>
         </Routes>
     </div>
   );

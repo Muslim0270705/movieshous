@@ -5,7 +5,7 @@ export const getSearch = createAsyncThunk(
     "search/getSearch",
     async (filter,{rejectWithValue}) => {
         try {
-            const res = await axios(`/data?${filter?.search.length ? "title=" + filter?.search : ''}`)
+            const res = await axios(`/data?${filter?.search?.length ? "title_like=" + filter?.search : ''}`)
             if(res.statusText !== 'OK'){
                 throw new Error("Server error !")
             }

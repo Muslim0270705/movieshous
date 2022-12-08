@@ -18,7 +18,6 @@ const SliderFilmAdventure= (setSearch) => {
             ...filter,
         }))
     },[filter])
-    console.log(filter.search)
     return (
         <>
             <div className="overlay__search">
@@ -52,7 +51,7 @@ const SliderFilmAdventure= (setSearch) => {
                                     {
 
                                         data.map((item) =>
-                                            <>
+                                            <div key={item.id}>
                                                 <SwiperSlide onClick={() => setSearch(false)} >
                                                     <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
                                                         <div className="slider__block" >
@@ -64,7 +63,7 @@ const SliderFilmAdventure= (setSearch) => {
                                                         </div>
                                                     </Link>
                                                 </SwiperSlide>
-                                            </>
+                                            </div>
                                         )}
                                 </>
 
