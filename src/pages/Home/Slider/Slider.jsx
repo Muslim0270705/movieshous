@@ -6,6 +6,7 @@ import "swiper/css/navigation"
 import {getCinema} from "../../../redux/reducers/cinema";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
 const Slider = () => {
     const dispatch = useDispatch()
     const {status,error,data} = useSelector((store) => store.cinema)
@@ -27,8 +28,8 @@ const Slider = () => {
                 {
                     status === "loading" ?
                         <SwiperSlide>
-                            <div style={{background:"grey"}} className="slider__block grey">
-                                <img src="" alt="" className="slider__block-img grey"/>
+                            <div className="skeleton__card">
+                                <Skeleton className="skeleton__card-swiper-img" style={{borderRadius: "30px"}}/>
                             </div>
                         </SwiperSlide>
                         : status === "resolve" ?

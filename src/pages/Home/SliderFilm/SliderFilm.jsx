@@ -6,7 +6,8 @@ import {useDispatch, useSelector} from "react-redux";
 import "swiper/css";
 import "swiper/css/navigation"
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
 const SliderFilm = () => {
 
     const dispatch = useDispatch()
@@ -32,15 +33,28 @@ const SliderFilm = () => {
                     >
                         {
                             status === "loading"
+
                                 ?
-                                <p>LOADING</p>
+                                Array(6).fill(0).map((item,idx) =>(
+                                    <SwiperSlide>
+                                        <div className="skeleton__card">
+                                            <Skeleton className="skeleton__card-img"/>
+                                            <Skeleton count={1} width="50%"/>
+                                            <Skeleton count={1} width="40%"/>
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+
+
+
+
                                 : status === "resolve"
                                     ?
                                     <>
                                         {
                                             data.map((item) =>(
 
-                                                <SwiperSlide >
+                                                <SwiperSlide>
                                                         <div className="slider__block" key={item.id}>
                                                             <div className="slider__img-box">
                                                                 <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
@@ -64,7 +78,6 @@ const SliderFilm = () => {
                                                             </Link>
                                                             <p className="sliderfilm__desc grey">{item.price}</p>
                                                         </div>
-
                                                 </SwiperSlide>
                                             ))
                                         }

@@ -19,7 +19,7 @@ const FilmsContent = () => {
 
 
     return (
-        <Box className="films__filter-box" sx={{minWidth: 150}}>
+        <Box className="films__filter-box" sx={{minWidth: 150}} style={{position:"relative"}}>
             <FormControl fullWidth>
                 <InputLabel style={{color: 'white'}} id="demo-simple-select-label">Содержание</InputLabel>
                 <Select style={{color: 'white'}}
@@ -32,7 +32,9 @@ const FilmsContent = () => {
                     <MenuItem className="films__filter-item" value="">По умолчанию</MenuItem>
                     {
                             genreData.map((item) => (
+
                                     <MenuItem className="films__filter-item" value={item.desc}>{item.desc}</MenuItem>
+
                                 )
                             )
                         }

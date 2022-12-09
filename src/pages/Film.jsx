@@ -39,8 +39,12 @@ const Film = () => {
             <div className="film__block-img">
 
                         <div className="film__vd">
+                            {
+                                product.price === "Подписка" ? <video src="https://odysseus.more.tv/player/1788/1368172" controls></video> :
                                 <iframe className="film__video" width="964" height="543" allow="encrypted-media" allowFullScreen="true" gesture="media"
-                                src={product.video}></iframe>
+                                        src={product.video}></iframe>
+                            }
+                                
                         </div>
 
 

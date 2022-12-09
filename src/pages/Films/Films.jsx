@@ -3,7 +3,12 @@ import Slider from "../Home/Slider/Slider";
 import Filmfilter from "./Filmfilter/Filmfilter";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {getCinema} from "../../redux/reducers/cinema";
+import {deleteFavorite, getCinema, getFavorites} from "../../redux/reducers/cinema";
+import FilmsSkeletonCard from "../FilmsSkeletonCard";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+import {SwiperSlide} from "swiper/react";
+
 
 const Films = () => {
     const dispatch = useDispatch()
@@ -71,102 +76,60 @@ const Films = () => {
         <>
             <Slider/>
             <Filmfilter/>
+
             <section className="films">
                 <div className="container">
                     <div className="films__row">
                         {
-                            content?.length || genre?.length  || country?.length ?
-                            contentFilm.map((item) => (
-                                            <div className="films__card">
-                                                <Link to={`/film/${item.id}`} className="films__card"
-                                                      style={{color: "white"}}>
-                                                    <div className="films__logo">
-                                                        <img className="films__img" src={item.logo} alt=""/>
+                            status === "loading" ?
+                                    <FilmsSkeletonCard card={31}/>
+                                : status === "resolve"
+                                    ?
+                                    <>
+                                        {
+                                            content?.length || genre?.length || country?.length ?
+                                                contentFilm.map((item) => (
+                                                    <div className="films__card">
+                                                        <Link to={`/film/${item.id}`} className="films__card"
+                                                              style={{color: "white"}}>
+                                                            <div className="films__logo">
+                                                                <img className="films__img" src={item.logo} alt=""/>
+                                                            </div>
+                                                            <h3 className="films__title">
+                                                                {item.title}
+                                                            </h3>
+                                                            <p className="films__desc">
+                                                                {item.price}
+                                                            </p>
+                                                        </Link>
                                                     </div>
-                                                    <h3 className="films__title">
-                                                        {item.title}
-                                                    </h3>
-                                                    <p className="films__desc">
-                                                        {item.price}
-                                                    </p>
-                                                </Link>
-                                            </div>
-                            ))
-                                // :
-                                // genre?.length ?
-                                //     genreFilm.map((item) => (
-                                //         <div className="films__card">
-                                //             <Link to={`/film/${item.id}`} className="films__card"
-                                //                   style={{color: "white"}}>
-                                //                 <div className="films__logo">
-                                //                     <img className="films__img" src={item.logo} alt=""/>
-                                //                 </div>
-                                //                 <h3 className="films__title">
-                                //                     {item.title}
-                                //                 </h3>
-                                //                 <p className="films__desc">
-                                //                     {item.price}
-                                //                 </p>
-                                //             </Link>
-                                //         </div>
-                                //     ))
-                                //     :
-                                :
-                                    data.map((item) => (
-                                        <div className="films__card">
-                                            <Link to={`/film/${item.id}`} className="films__card"
-                                                  style={{color: "white"}}>
-                                                <div className="films__logo">
-                                                    <img className="films__img" src={item.logo} alt=""/>
-                                                </div>
-                                                <h3 className="films__title">
-                                                    {item.title}
-                                                </h3>
-                                                <p className="films__desc">
-                                                    {item.price}
-                                                </p>
-                                            </Link>
-                                        </div>
-                                    ))
+                                                ))
+
+                                                :
+                                                data.map((item) => (
+                                                    <div className="films__card">
+                                                        <Link to={`/film/${item.id}`} className="films__card"
+                                                              style={{color: "white"}}>
+                                                            <div className="films__logo">
+                                                                <img className="films__img" src={item.logo} alt=""/>
+                                                            </div>
+                                                            <h3 className="films__title">
+                                                                {item.title}
+                                                            </h3>
+                                                            <p className="films__desc">
+                                                                {item.price}
+                                                            </p>
+                                                        </Link>
+                                                    </div>
+                                                ))
+                                        }
+                                    </>
+
+
+
+                                    : error
 
                         }
-                        {/*{*/}
-                        {/*    filter.genre.length ?*/}
-                        {/*        b.map((item) => (*/}
-                        {/*            <div className="films__card">*/}
-                        {/*                <Link to={`/film/${item.id}`} className="films__card"*/}
-                        {/*                      style={{color: "white"}}>*/}
-                        {/*                    <div className="films__logo">*/}
-                        {/*                        <img className="films__img" src={item.logo} alt=""/>*/}
-                        {/*                    </div>*/}
-                        {/*                    <h3 className="films__title">*/}
-                        {/*                        {item.title}*/}
-                        {/*                    </h3>*/}
-                        {/*                    <p className="films__desc">*/}
-                        {/*                        {item.price}*/}
-                        {/*                    </p>*/}
-                        {/*                </Link>*/}
-                        {/*            </div>*/}
-                        {/*        ))*/}
-                        {/*        :*/}
-                        {/*        data.map((item) => (*/}
-                        {/*            <div className="films__card">*/}
-                        {/*                <Link to={`/film/${item.id}`} className="films__card"*/}
-                        {/*                      style={{color: "white"}}>*/}
-                        {/*                    <div className="films__logo">*/}
-                        {/*                        <img className="films__img" src={item.logo} alt=""/>*/}
-                        {/*                    </div>*/}
-                        {/*                    <h3 className="films__title">*/}
-                        {/*                        {item.title}*/}
-                        {/*                    </h3>*/}
-                        {/*                    <p className="films__desc">*/}
-                        {/*                        {item.price}*/}
-                        {/*                    </p>*/}
-                        {/*                </Link>*/}
-                        {/*            </div>*/}
-                        {/*        ))*/}
-                        {/*}*/}
-
                     </div>
                 </div>
             </section>

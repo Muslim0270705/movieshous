@@ -4,6 +4,7 @@ import {deleteFavorite, getCinema, getFavorites} from "../../../redux/reducers/c
 import {useDispatch, useSelector} from "react-redux";
 import "swiper/css";
 import {Link} from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
 const SliderFilmFrance = () => {
 
     const dispatch = useDispatch()
@@ -40,7 +41,15 @@ const SliderFilmFrance = () => {
                     {
                         status === "loading"
                             ?
-                            <p>LOADING</p>
+                            Array(6).fill(0).map((item,idx) =>(
+                                <SwiperSlide>
+                                    <div className="skeleton__card">
+                                        <Skeleton className="skeleton__card-img"/>
+                                        <Skeleton count={1} width="50%"/>
+                                        <Skeleton count={1} width="40%"/>
+                                    </div>
+                                </SwiperSlide>
+                            ))
                             : status === "resolve"
                                 ?
                                 <>
