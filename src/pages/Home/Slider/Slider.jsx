@@ -1,29 +1,22 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import {Navigation} from "swiper";
 import "swiper/css"
 import "swiper/css/navigation"
-import {getCinema} from "../../../redux/reducers/cinema";
-import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-const Slider = () => {
-    const dispatch = useDispatch()
-    const {status,error,data} = useSelector((store) => store.cinema)
-    console.log(data)
-    useEffect(() => {
-        dispatch(getCinema())
-    },[])
+const Slider = ({data,status,error}) => {
+
 
     return (
         <section className="slider">
-            <Swiper style={{padding:"0 60px 0 60px"}}
-                slidesPerView={"auto"}
-                autoplay={true}
+            <Swiper style={{padding:'0' ,maxWidth:"1300px"}}
+                slidesPerView={"1"}
                 spaceBetween={30}
                 navigation={true}
+                centeredSlides={true}
                 modules={[Navigation]}
-                className="sliderSwiper"
+                className="sliderSwipers sliderSwiper"
             >
                 {
                     status === "loading" ?
@@ -35,10 +28,10 @@ const Slider = () => {
                         : status === "resolve" ?
                             <>
                                 {
-                                    data.map((item) =>(
-                                        <SwiperSlide>
+                                    data?.map((item) =>(
+                                        <SwiperSlide key={item.id}>
                                             <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
-                                                <div key={item.id} className="slider__block">
+                                                <div className="slider__block">
                                                     <img src={item.img} alt="" className="slider__block-img"/>
                                                 </div>
                                             </Link>

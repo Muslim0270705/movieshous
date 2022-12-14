@@ -3,12 +3,12 @@ import {IoIosArrowForward} from "react-icons/io";
 import {Link, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 import {getOneFilm} from "../redux/reducers/getOneFilm";
-import {getCinema, getLikes,deleteLikes} from "../redux/reducers/cinema";
+import {getCinema, getLikes, deleteLikes, getDisLikes, deleteDisLikes} from "../redux/reducers/cinema";
 
 const Film = () => {
     const dispatch = useDispatch()
     const params = useParams();
-    const {data,likes} = useSelector((store) => store.cinema)
+    const {data,likes,dislikes} = useSelector((store) => store.cinema)
     const {status, error,product} = useSelector((store) => store.onefilms);
     let genreData = data.map((item) => item.genre ).flat().filter((item,idx,arr) => arr.map(item => item.desc).indexOf(item.desc) === idx)
     useEffect(() => {
@@ -25,13 +25,23 @@ const Film = () => {
                         {product.title} смотреть онлайн    <span className="grey">{product.age}+</span>
 
                     </h2>
-                    <img onClick={() => {
-                        if(likes.data.filter(item => item.id === product.id).length){
-                            dispatch(deleteLikes(product.id))
-                        }else{
-                            dispatch(getLikes(product.id))
-                        }
-                    }} src="https://web-static.more.tv/static/icons/like-icon.3066bdac.svg" alt=""/>
+                    <div>
+                        <img onClick={() => {
+                            if(dislikes.data.filter(item => item.id === product.id).length){
+                                dispatch(deleteDisLikes(product.id))
+                            }else{
+                                dispatch(getDisLikes(product.id))
+                            }
+                        }} style={{transform: "rotate(180deg)"}}  src={dislikes?.data?.filter(item => item?.id === product?.id)?.length ? "https://web-static.more.tv/static/icons/like-icon-active.486b3641.svg":  "https://web-static.more.tv/static/icons/like-icon.3066bdac.svg"} alt=""/>
+                        <img onClick={() => {
+                            if(likes.data.filter(item => item.id === product.id).length){
+                                dispatch(deleteLikes(product.id))
+                            }else{
+                                dispatch(getLikes(product.id))
+                            }
+                        }}  src={likes?.data?.filter(item => item?.id === product?.id)?.length ? "https://web-static.more.tv/static/icons/like-icon-active.486b3641.svg":  "https://web-static.more.tv/static/icons/like-icon.3066bdac.svg"} alt=""/>
+
+                    </div>
                 </div>
 
 
@@ -40,11 +50,11 @@ const Film = () => {
 
                         <div className="film__vd">
                             {
-                                product.price === "Подписка" ? <video src="https://odysseus.more.tv/player/1788/1368172" controls></video> :
+                                product.price === "Подписка" ?  <video className="film__video" width="964" height="543" src="https://nl03.cdnsqu.com/s/FXFSWWS9ipYHAQW9KlSN2U4GEEFBQUFBQUFBQUFBQlpGWFNBQUJC/UHD_90/Cyrano.2021.BDRip.1080p_480.mp4" controls></video> :
                                 <iframe className="film__video" width="964" height="543" allow="encrypted-media" allowFullScreen="true" gesture="media"
                                         src={product.video}></iframe>
                             }
-                                
+
                         </div>
 
 

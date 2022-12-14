@@ -1,20 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
-import {deleteFavorite, getCinema, getFavorites} from "../../../redux/reducers/cinema";
-import {useDispatch, useSelector} from "react-redux";
+import {deleteFavorite,getFavorites} from "../../../redux/reducers/cinema";
+import {useDispatch} from "react-redux";
 import "swiper/css";
 import "swiper/css/navigation"
 import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-const SliderFilmAction = () => {
+const SliderFilmAction = ({data,status,error,favorites}) => {
 
     const dispatch = useDispatch()
-    const {status,error,data,favorites} = useSelector((store) => store.cinema)
-    useEffect(() => {
-        dispatch(getCinema())
-    },[])
-    let a = data.map((item) => item.genre.filter((el) => el.desc === "Драма" ))
     let contentFilm = []
     const FilterGenre = (baz) => {
         baz.map((item) => {
@@ -38,7 +33,7 @@ const SliderFilmAction = () => {
 
             <section className="sliderfilm">
 
-                <Swiper style={{padding:"0 50px"}}
+                <Swiper
                         slidesPerView={5}
                         autoplay={true}
                         spaceBetween={30}
@@ -64,8 +59,8 @@ const SliderFilmAction = () => {
                                     {
 
                                         contentFilm.map((item) =>
-                                            <SwiperSlide>
-                                                <div className="slider__block" key={item.id}>
+                                            <SwiperSlide key={item.id}>
+                                                <div className="slider__block" >
                                                     <div className="slider__img-box">
                                                         <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
 

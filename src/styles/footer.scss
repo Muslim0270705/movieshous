@@ -50,3 +50,29 @@
   padding: 2px;
 
 }
+@media (max-width: 576px) {
+  .footer__title{
+    font-size: 17px;
+  }
+  .footer__menu{
+    column-gap: 13px;
+  }
+  .footer__menu-item-info{
+    font-size: 13px;
+  }
+  .footer__menu-item-info.add{
+    max-width: 140px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .footer__title{
+    font-size: 15px;
+  }
+}
+@media (max-width: 375px) {
+
+}
+@media (max-width: 320px) {
+
+}

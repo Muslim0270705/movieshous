@@ -32,8 +32,8 @@ const Footer = () => {
                         <li className="footer__menu-item-info"><Link className="footer__menu-item-info grey">Карта сайта</Link></li>
                     </ul>
                     <ul className='footer__menu'>
-                        <li className="footer__menu-item-info"><Link to={"/trems"} className="footer__menu-item-info grey">Пользовательское соглашение</Link></li>
-                        <li className="footer__menu-item-info"><Link to={"/confidentiality"} className="footer__menu-item-info grey">Политика конфиденциальности</Link></li>
+                        <li className="footer__menu-item-info add"><Link to={"/trems"} className="footer__menu-item-info grey">Пользовательское соглашение</Link></li>
+                        <li className="footer__menu-item-info add"><Link to={"/confidentiality"} className="footer__menu-item-info grey">Политика конфиденциальности</Link></li>
                     </ul>
                 </div>
 

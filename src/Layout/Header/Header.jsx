@@ -1,5 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import {BsHouseDoor} from "react-icons/bs"
+import {AiOutlineYoutube} from "react-icons/ai"
+import {IoPersonOutline} from "react-icons/io5"
+
 import {RiMovieFill,RiSearchLine} from "react-icons/ri"
 import {useDispatch, useSelector} from "react-redux";
 import {logOutAccount} from "../../redux/reducers/users";
@@ -10,6 +14,7 @@ const Header = () => {
     const dispatch = useDispatch()
     const [categoryState,setCategoryState] = useState("")
     const [active,setActive] = useState(false)
+    const [fix,setFix] = useState('/')
     const [search,setSearch] = useState(false)
     useEffect( () => {
         dispatch(changeCategory(categoryState)
@@ -38,7 +43,11 @@ const Header = () => {
                                 <li onClick={() => setCategoryState("series")}  className="header__menu-item"><Link to={"/content"} className="header__menu-item">СЕРИАЛЫ</Link></li>
                                 <li onClick={() => setCategoryState("cartoons")}  className="header__menu-item"><Link to={"/content"} className="header__menu-item">МУЛЬТФИЛЬМЫ</Link></li>
                                 <li className="header__menu-item"><Link to={"/about"} className="header__menu-item">О НАС</Link></li>
+                                {
+                                    userName.email === 'magezamuslim40@gmail.com' ? <li className='header__item'><Link className='header__menu-item' to={"/clothes"}> Admin Panel </Link> </li> : ''
+                                }
                             </ul>
+
                             <label className="header__label">
                                 <RiSearchLine  className="header__search"/>
                                 <input onClick={() => setSearch(!search)} placeholder="Найти" className="header__input" type="text" />
@@ -100,9 +109,28 @@ const Header = () => {
                                     </>
 
                             }
-
+                            <ul className="header__menu-bottom">
+                                <li onClick={() => setFix("/")} style={{color: fix === "/" ? "white":""}} className="header__menu-bottom-item">
+                                    <Link to={'/'}  className="header__menu-bottom-item-desc">
+                                        <BsHouseDoor className="header__menu-bottom-item-icon"/>
+                                        Главная
+                                    </Link>
+                                </li>
+                                <li onClick={() => setFix("catalog")} style={{color: fix === "catalog" ? "white":""}} className="header__menu-bottom-item">
+                                    <Link to={"/content"} className="header__menu-bottom-item-desc">
+                                        <AiOutlineYoutube className="header__menu-bottom-item-icon"/>
+                                        Каталог
+                                    </Link>
+                                </li>
+                                <li onClick={() => setFix("person")} style={{color: fix === "person" ? "white":""}} className="header__menu-bottom-item">
+                                    <Link to={"/favorites"} className="header__menu-bottom-item-desc">
+                                        <IoPersonOutline className="header__menu-bottom-item-icon"/>
+                                        Профиль
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
-                </div>
+            </div>
         </header>
     );
 };

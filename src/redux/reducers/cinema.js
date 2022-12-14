@@ -34,6 +34,10 @@ const cinemaSlice = createSlice({
           data:[],
           dataLength: 0
         },
+        dislikes: {
+            data:[],
+            dataLength:0
+        },
         status: '',
         error: '',
         content: "",
@@ -74,12 +78,22 @@ const cinemaSlice = createSlice({
                 state.favorites.dataLength = state.favorites.dataLength - 1
             },
             getLikes: (state,action) => {
-                state.likes.data = [...state.favorites.data, state.data.find((item) => item.id === action.payload)]
-                state.likes.dataLength = state.favorites.dataLength + 1
+                state.likes.data = [...state.likes.data, state.data.find((item) => item.id === action.payload)]
+                state.dislikes.data = state.dislikes.data.filter(item => item.id !== action.payload)
+                state.likes.dataLength = state.likes.dataLength + 1
             },
             deleteLikes: (state,action) => {
-                state.likes.data = state.favorites.data.filter(item => item.id !== action.payload)
-                state.likes.dataLength = state.favorites.dataLength - 1
+                state.likes.data = state.likes.data.filter(item => item.id !== action.payload)
+                state.likes.dataLength = state.likes.dataLength - 1
+            },
+            getDisLikes: (state,action) => {
+                state.dislikes.data = [...state.dislikes.data, state.data.find((item) => item.id === action.payload)]
+                state.likes.data = state.likes.data.filter(item => item.id !== action.payload)
+                state.dislikes.dataLength = state.dislikes.dataLength + 1
+            },
+            deleteDisLikes: (state,action) => {
+                state.dislikes.data = state.dislikes.data.filter(item => item.id !== action.payload)
+                state.dislikes.dataLength = state.dislikes.dataLength - 1
             }
 
     },
@@ -101,5 +115,5 @@ const cinemaSlice = createSlice({
     }
 })
 
-export const {changeYear,changeGenre,changeContent,changeCountry,changeCategory,changePrice,getFavorites,deleteFavorite,getLikes,deleteLikes} = cinemaSlice.actions
+export const {changeYear,changeGenre,changeContent,changeCountry,changeCategory,changePrice,getFavorites,deleteFavorite,getLikes,deleteLikes,getDisLikes,deleteDisLikes} = cinemaSlice.actions
 export default  cinemaSlice.reducer

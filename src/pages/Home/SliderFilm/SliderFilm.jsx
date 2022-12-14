@@ -1,20 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
-import {deleteFavorite, getCinema, getFavorites} from "../../../redux/reducers/cinema";
-import {useDispatch, useSelector} from "react-redux";
+import {deleteFavorite,getFavorites} from "../../../redux/reducers/cinema";
+import {useDispatch} from "react-redux";
 import "swiper/css";
 import "swiper/css/navigation"
 import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
-const SliderFilm = () => {
-
+const SliderFilm = ({status,error,data,favorites}) => {
     const dispatch = useDispatch()
-    const {status,error,data,favorites} = useSelector((store) => store.cinema)
-    useEffect(() => {
-        dispatch(getCinema())
-    },[])
     return (
         <>
             <div className="container">
@@ -23,11 +18,12 @@ const SliderFilm = () => {
 
             <section className="sliderfilm">
 
-                    <Swiper style={{padding:"0 50px"}}
+                    <Swiper
                         slidesPerView={5}
                         autoplay={true}
                         spaceBetween={30}
                         navigation={true}
+
                         modules={[Navigation]}
                         className="sliderSwiper"
                     >
@@ -52,10 +48,9 @@ const SliderFilm = () => {
                                     ?
                                     <>
                                         {
-                                            data.map((item) =>(
-
-                                                <SwiperSlide>
-                                                        <div className="slider__block" key={item.id}>
+                                            data?.map((item) =>(
+                                                <SwiperSlide key={item.id}>
+                                                        <div className="slider__block" >
                                                             <div className="slider__img-box">
                                                                 <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
 

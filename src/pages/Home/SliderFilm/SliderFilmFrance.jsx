@@ -1,20 +1,16 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {deleteFavorite, getCinema, getFavorites} from "../../../redux/reducers/cinema";
-import {useDispatch, useSelector} from "react-redux";
+import {deleteFavorite,getFavorites} from "../../../redux/reducers/cinema";
+import {useDispatch} from "react-redux";
 import "swiper/css";
 import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-const SliderFilmFrance = () => {
+const SliderFilmFrance = ({data,status,error,favorites}) => {
 
     const dispatch = useDispatch()
-    const {status,error,data,favorites} = useSelector((store) => store.cinema)
-    useEffect(() => {
-        dispatch(getCinema())
-    },[])
     let contentFilm = []
-    const FilterGenre = (baz) => {
-        baz.map((item) => {
+    const FilterUsa = (baza) => {
+        baza.map((item) => {
             item.country.flat().filter((el)=>{
                 if (el.desc === 'США'){
                     contentFilm = [...contentFilm,item]
@@ -26,23 +22,23 @@ const SliderFilmFrance = () => {
         })
         return contentFilm
     }
-    FilterGenre(data)
+    FilterUsa(data)
     return (
         <>
             <section className="sliderfilmfrance">
 
-                <Swiper style={{padding:"0 100px 0 0 "}}
+                <Swiper
                         slidesPerView={5}
                         autoplay={true}
                         spaceBetween={30}
                         interval={3000}
-                        className="sliderSwiper"
+                        className="sliderSwiper sliderfrance"
                 >
                     {
                         status === "loading"
                             ?
                             Array(6).fill(0).map((item,idx) =>(
-                                <SwiperSlide>
+                                <SwiperSlide className='swiper__card'>
                                     <div className="skeleton__card">
                                         <Skeleton className="skeleton__card-img"/>
                                         <Skeleton count={1} width="50%"/>
@@ -56,8 +52,8 @@ const SliderFilmFrance = () => {
                                     {
 
                                         contentFilm.map((item) =>
-                                            <SwiperSlide >
-                                                <div className="slider__block" key={item.id}>
+                                            <SwiperSlide key={item.id} className="swiper__card">
+                                                <div className="slider__block" >
                                                     <div className="slider__img-box">
                                                         <Link to={`/film/${item.id}`} style={{color: "white"}} className="films__card">
 

@@ -5,8 +5,8 @@
       "category": "films",
       "title": "Сирано",
       "year": "2021",
-      "img": "https://mf-static-ssl.more.tv/jackal/4784333/0fd2a5be-00b7-48e7-b8f8-a1a2d172af45_W1920_H771.avif",
-      "logo": "https://mf-static-ssl.more.tv/jackal/4786725/fe40df95-024f-40fb-96a4-4dc831471249_W250_H355.avif",
+      "img": "https://mf-static-ssl.more.tv/jackal/4801501/ac1613e8-13b7-4e24-ad35-e4772f370562_W1920_H771.avif",
+      "logo": "https://mf-static-ssl.more.tv/jackal/4801617/bb318798-a2e3-442c-a915-4eb43c67e926_W375_H532.avif",
       "desc": "Сирано де Бержерак — человек, опередивший свое время — одинаково искусен в словесных и фехтовальных поединках. Убежденный в том, что изъяны внешности делают его недостойным любви преданной подруги, блистательной Роксаны, он не рискует открыть ей свои чувства, а Роксана, тем временем, влюбляется с первого взгляда в Кристиана.",
       "country": [
         {
@@ -2603,7 +2603,7 @@
       ]
     },
     {
-      "id": 36,
+      "id": 37,
       "category": "series",
       "title": "Трудные подростки. Реальность",
       "year": "2021",
@@ -2666,7 +2666,7 @@
       ]
     },
     {
-      "id": 37,
+      "id": 38,
       "category": "series",
       "title": "С прицепом",
       "year": "2017",
@@ -2729,7 +2729,7 @@
       ]
     },
     {
-      "id": 38,
+      "id": 39,
       "category": "series",
       "title": "Работяга (Working Man)",
       "year": "2006",
@@ -2792,7 +2792,7 @@
       ]
     },
     {
-      "id": 39,
+      "id": 40,
       "category": "series",
       "title": "Фарго",
       "year": "2014",
@@ -2873,16 +2873,10 @@
   ],
   "users": [
     {
-      "email": "malikdunlza0@gmail.com",
-      "password": "$2a$10$1KGAQj3LV6jKiuMh.4.cG.IOIGuuRaqsf3GU9/fg4BIacB0MDypMu",
-      "name": "Malik lox ",
-      "id": 1
-    },
-    {
       "email": "magezamuslim40@gmail.com",
       "password": "$2a$10$txPWMXVABDq7oux6aW5GjeXfH8BV8GYZNiXEJx8.iXxFge7c0STj6",
-      "name": "Muslim",
-      "id": 2
+      "name": "Muslim Mageza",
+      "id": 1
     }
   ]
 }

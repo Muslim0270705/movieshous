@@ -20,7 +20,7 @@
 @import "favorites";
 @import "favorite";
 @import "skeleton";
-
+@import "questions";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap');
 *{
   padding: 0;
@@ -57,10 +57,10 @@ body{
   font-size: 20px;
   line-height: 24px;
 }
-@import "questions";
-//.layout{
-//  display: flex;
-//  min-height: 100vh;
-//  flex-direction: column;
-//  justify-content: space-between;
-//}
+.create{
+  max-height: 400px;
+  width: 100%;
+}
+.css-1a69w1n-MuiStack-root{
+  display: block;
+}

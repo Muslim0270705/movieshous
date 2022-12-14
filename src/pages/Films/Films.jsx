@@ -1,15 +1,11 @@
 import React, {useEffect} from 'react';
-import Slider from "../Home/Slider/Slider";
 import Filmfilter from "./Filmfilter/Filmfilter";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {deleteFavorite, getCinema, getFavorites} from "../../redux/reducers/cinema";
+import {getCinema} from "../../redux/reducers/cinema";
 import FilmsSkeletonCard from "../FilmsSkeletonCard";
-import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
-import {SwiperSlide} from "swiper/react";
-
-
+import Slider from "../Home/Slider/Slider";
 const Films = () => {
     const dispatch = useDispatch()
     const {status, error, data, filter, content,genre,country} = useSelector((store) => store.cinema)
@@ -74,7 +70,8 @@ const Films = () => {
     FilterCountry(data)
     return (
         <>
-            <Slider/>
+            {/*<Slider />*/}
+            <Slider data={data} status={status} error={error}/>
             <Filmfilter/>
 
             <section className="films">
