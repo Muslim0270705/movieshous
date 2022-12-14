@@ -27,7 +27,7 @@ import AdminPanel from "./AdminPanel/AdminPanel";
 
 function App() {
     const dispatch = useDispatch()
-    const userName = JSON.parse(localStorage.getItem("user"))
+    const userName =localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")) : ''
     useEffect(() => {
         if(localStorage.getItem("user") !== null){
             dispatch(loginAccount(JSON.parse(localStorage.getItem("user"))))

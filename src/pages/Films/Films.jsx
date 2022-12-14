@@ -6,6 +6,7 @@ import {getCinema} from "../../redux/reducers/cinema";
 import FilmsSkeletonCard from "../FilmsSkeletonCard";
 import 'react-loading-skeleton/dist/skeleton.css'
 import Slider from "../Home/Slider/Slider";
+
 const Films = () => {
     const dispatch = useDispatch()
     const {status, error, data, filter, content,genre,country} = useSelector((store) => store.cinema)
@@ -68,6 +69,7 @@ const Films = () => {
         return contentFilm
     }
     FilterCountry(data)
+
     return (
         <>
             {/*<Slider />*/}
@@ -85,9 +87,9 @@ const Films = () => {
                                     <>
                                         {
                                             content?.length || genre?.length || country?.length ?
-                                                contentFilm.map((item) => (
+                                                contentFilm.parse.map((item) => (
                                                     <div className="films__card">
-                                                        <Link to={`/film/${item.id}`} className="films__card"
+                                                        <Link  to={`/film/${item.id}`} className="films__card"
                                                               style={{color: "white"}}>
                                                             <div className="films__logo">
                                                                 <img className="films__img" src={item.logo} alt=""/>

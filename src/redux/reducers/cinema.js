@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 
+
 export const getCinema = createAsyncThunk(
     "cinema/getCinema",
     async (filter,{rejectWithValue}) => {
@@ -15,6 +16,7 @@ export const getCinema = createAsyncThunk(
         }
     }
 )
+
 
 const cinemaSlice = createSlice({
     name: "cinema",

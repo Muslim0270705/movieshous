@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import { List,AutocompleteArrayInput, Datagrid, Edit, SelectArrayInput, SelectInput, NumberInput, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput } from 'react-admin';
 import {useDispatch} from "react-redux";
-
+import { nanoid } from 'nanoid'
 
 const CreateClothes = (props) => {
-    const dispatch = useDispatch
-    const  a = []
-    console.log()
+
     return (
             <Create  title="Create a Post" {...props}>
                 <SimpleForm className="create__card">
@@ -31,173 +29,89 @@ const CreateClothes = (props) => {
                     <TextInput source="logo" />
                     <TextInput source="desc" />
 
-                    <AutocompleteArrayInput  optionText='name' source="country" choices={[
+                    <AutocompleteArrayInput  optionText='id' optionValue='name' source="country" choices={[
                         {
-                            id: {
-                                desc:"США"
-                            },
-                            name: "США",
+                            id: "CША",
+                            name: JSON.stringify({id: 1, desc: 'CША'})
                         },
                         {
-                            id: {
-                                 desc:"Великобритания"
-                            },
-                            name: "Великобритания"
+                            id:"Великобритания",
+                            name: JSON.stringify({id: 2, desc: 'Великобритания'})
                         },
                         {
-                            id: {
-                                desc:"Италия"
-                            },
-                            name: "Италия"
+                            id: "Италия",
+                            name: JSON.stringify({id: 3, desc: 'Италия'})
                         },
                         {
-                            id: {
-                                desc:"Канада"
-                            },
-                            name: "Канада"
+                            id: "Канада",
+                            name: JSON.stringify({id: 4, desc: 'Канада'})
                         },
                         {
                             id: "Франция",
-                            data: {
-                                desc:"Франция"
-                            },
-                            name: "Франция"
+                            name: JSON.stringify({id: 5, desc: 'Франция'})
                         },
                         {
                             id: "Бельгия",
-                            data: {
-                                desc:"Бельгия"
-                            },
-                            name: "Бельгия"
-                        },
-                        {
-                            id: "Бельгия",
-                            name: "Бельгия"
+
+                            name: JSON.stringify({id: 6, desc: 'Бельгия'})
                         },
                         {
                             id: "Южная Корея",
-                            name: "Южная Корея"
+                            name: JSON.stringify({id: 7, desc: 'Южная Корея'})
                         },
                         {
                             id: "Россия",
-                            name: "Россия"
+                            name: JSON.stringify({id: 8, desc: 'Россия'})
                         },
                         {
                             id: "Люксембург",
-                            name: "Люксембург"
-                        },
-                        {
-                            id: "Германия",
-                            name: "Германия"
-                        },
-                        {
-                            id: "Испания",
-                            name: "Испания"
-                        },
-                        {
-                            id: "Румыния",
-                            name: "Румыния"
-                        },
-                        {
-                            id: "Новая Зеландия",
-                            name: "Новая Зеландия"
-                        },
-                        {
-                            id: "Австралия",
-                            name: "Австралия"
-                        },
-                    ]}/>
-                    <SelectArrayInput source="genre" choices={[
-                        {
-                            id: "Мелодрама",
-                            name: "Мелодрама"
-                        },
-                        {
-                            id: "Драма",
-                            name: "Драма"
-                        },
-                        {
-                            id: "Музыкальный",
-                            name: "Музыкальный"
-                        },
-                        {
-                            id: "Триллер",
-                            name: "Триллер"
-                        },
-                        {
-                            id: "Фантастика",
-                            name: "Фантастика"
-                        },
-                        {
-                            id: "Исторический",
-                            name: "Исторический"
-                        },
-                        {
-                            id: "Биография",
-                            name: "Биография"
-                        },
-                        {
-                            id: "Комедия",
-                            name: "Комедия"
-                        },
-                        {
-                            id: "Криминал",
-                            name: "Криминал"
-                        },
-                        {
-                            id: "Военный",
-                            name: "Военный"
-                        },
-                        {
-                            id: "Спорт",
-                            name: "Спорт"
-                        },
-                        {
-                            id: "Боевик",
-                            name: "Боевик"
-                        },
-                        {
-                            id: "Приключения",
-                            name: "Приключения"
-                        },
-                        {
-                            id: "Вестерн",
-                            name: "Вестерн"
-                        },
-                        {
-                            id: "Вестерн",
-                            name: "Вестерн"
-                        },
-                        {
-                            id: "Ужасы",
-                            name: "Ужасы"
+                            name: JSON.stringify({id: 9, desc: 'Люксембург'})
                         }
                     ]}/>
-                    <SelectArrayInput source="content" choices={[
+                    <SelectArrayInput optionText='id' optionValue='name' source="genre" choices={[
                         {
-                            id: "Жизнь",
-                            name: "Жизнь"
+                           id: "Мелодрама",
+                           name: JSON.stringify({id: 1, desc: 'Мелодрама'})
+                        },
+                        {
+                           id:'Драма',
+                            name: JSON.stringify({id: 2, desc: 'Драма'})
+                        },
+                        {
+                           id:"Музыкальный",
+                            name: JSON.stringify({id: 3, desc: 'Музыкальный'})
+                        },
+                        {
+                           id: "Триллер",
+                            name: JSON.stringify({id: 4, desc: 'Триллер'})
+                        }
+                    ]}/>
+                    <SelectArrayInput optionText='id' optionValue='name' source="content" choices={[
+                        {
+                            id: "Жизнь1",
+                            name: JSON.stringify({id: 5, desc: 'Жизнь'})
                         },
                         {
                             id: "Дети",
-                            name: "Дети"
+                            name: JSON.stringify({id: 6, desc: 'Дети'})
                         },
                         {
                             id: "Любовь",
-                            name: "Любовь"
+                            name: JSON.stringify({id: 7, desc: 'Любовь'})
+
                         },
                         {
                             id: "Сметь",
-                            name: "Сметь"
+                            name: JSON.stringify({id: 8, desc: 'Сметь'})
                         },
                         {
                             id: "Битва",
-                            name: "Битва"
+                            name: JSON.stringify({id: 9, desc: 'Битва'})
                         },
                         {
                             id: "Расследование",
-                            name: "Расследование"
-                        },
+                            name: JSON.stringify({id: 10, desc: 'Расследование'})
+                        }
                     ]}/>
                     <TextInput source="price" />
                     <TextInput source="video" />

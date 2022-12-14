@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {IoIosArrowForward} from "react-icons/io";
 import {Link, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 import {getOneFilm} from "../redux/reducers/getOneFilm";
-import {getCinema, getLikes, deleteLikes, getDisLikes, deleteDisLikes} from "../redux/reducers/cinema";
+import {getLikes, deleteLikes, getDisLikes, deleteDisLikes} from "../redux/reducers/cinema";
+import { useLocation } from "react-router-dom";
+
 
 const Film = () => {
+
     const dispatch = useDispatch()
     const params = useParams();
     const {data,likes,dislikes} = useSelector((store) => store.cinema)

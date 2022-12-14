@@ -20,7 +20,7 @@ const Header = () => {
         dispatch(changeCategory(categoryState)
         )
     },[categoryState])
-    const userName = JSON.parse(localStorage.getItem("user"))
+    const userName = localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")) : ''
     return (
         <header className="header">
             <div style={{display: search ? "block" : "none"}} className="overlay">
