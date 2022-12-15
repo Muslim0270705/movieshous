@@ -84,7 +84,7 @@ const Film = () => {
                                 </li>
                                 <li className="film__menu-item"><h3 className="film__menu-title">Страна:</h3>
                                     {
-                                       product.country && product.country.map((item) => (
+                                       product.country && product.country.map(item => JSON.parse(item)).map((item) => (
                                                 <div key={item.id}>
                                                     <Link to={'/'}>
                                                         <button className="film__year">{item.desc}</button>
@@ -96,7 +96,7 @@ const Film = () => {
                                 </li>
                                 <li className="film__menu-item"><h3 className="film__menu-title">Жанр:</h3>
                                     {
-                                        product.genre && product.genre.map((item) => (
+                                        product.genre && product.genre.map(item => JSON.parse(item)).map((item) => (
                                             <div key={item.id}>
                                                 <Link to={'/'}>
                                                     <button className="film__year">{item.desc}</button>
@@ -109,7 +109,7 @@ const Film = () => {
                                 <li className="film__menu-item"><h3 className="film__menu-title">Содержание:</h3>
 
                                     {
-                                        product.content && product.content.map((item) => (
+                                        product.content && product.content.map(item => JSON.parse(item)).map((item) => (
                                             <div key={item.id}>
                                                 <Link to={'/'}>
                                                     <button className="film__year">{item.desc}</button>
