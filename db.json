@@ -2895,6 +2895,31 @@
       "price": " Бесплатно",
       "video": "https://odysseus.more.tv/player/1788/951461",
       "id": 41
+    },
+    {
+      "category": "films",
+      "title": "МЯЧМИЯВИ",
+      "year": 20111,
+      "img": "https://mf-static-ssl.more.tv/jackal/4803017/cfb960db-772c-4015-8965-547d74f883bd_W1920_H771.avif",
+      "logo": "https://mf-static-ssl.more.tv/jackal/2581693/deb5bf99-f103-45a6-b890-5e3d160493ae_W375_H532.webp",
+      "desc": "ШЗМРВЫЫЬДЖЬИТЫВТ",
+      "country": [
+        "{\"id\":3,\"desc\":\"Италия\"}",
+        "{\"id\":8,\"desc\":\"Россия\"}",
+        "{\"id\":9,\"desc\":\"Люксембург\"}"
+      ],
+      "genre": [
+        "{\"id\":2,\"desc\":\"Драма\"}",
+        "{\"id\":3,\"desc\":\"Музыкальный\"}"
+      ],
+      "content": [
+        "{\"id\":8,\"desc\":\"Сметь\"}",
+        "{\"id\":7,\"desc\":\"Любовь\"}",
+        "{\"id\":6,\"desc\":\"Дети\"}"
+      ],
+      "price": "Бесплатно",
+      "video": "https://odysseus.more.tv/player/1788/1236350",
+      "id": 42
     }
   ],
   "users": [
@@ -2909,6 +2934,18 @@
       "password": "$2a$10$i4QQGHNGLZMT.46B1ttoNefIfoFabimh8PSOz4N6iTfK2sKW5TnqW",
       "name": "Nurskrhgkhl",
       "id": 2
+    },
+    {
+      "email": "magezamuslim20@gmail.com",
+      "password": "$2a$10$qfjPbhIm8rVfmmlqIT2Hu.DgWE4gDmv8XLd3D6TllLvnRpK6ljvIe",
+      "name": "Muslim as ",
+      "id": 3
+    },
+    {
+      "email": "magezamuslim@mail.ru",
+      "password": "$2a$10$LtjHOgy.oW7dUjp1cWwXA.ZZUxvWpKN/cHfropRwKFvnPvLVYHGcS",
+      "name": "Muslilm losk",
+      "id": 4
     }
   ]
 }

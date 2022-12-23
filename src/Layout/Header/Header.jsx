@@ -104,7 +104,6 @@ const Header = () => {
 
                                     :
                                     <>
-                                        <button type="button" className="header__btn blue">30 дней подписки бесплатно</button>
                                         <button type="button" className="header__btn"><Link style={{color:"white"}} to={"/input"}>Войти</Link></button>
                                     </>
 

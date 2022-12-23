@@ -46,7 +46,7 @@ const Register = () => {
             </div>
             <div className="input__popup popup">
                 <form onSubmit={handleSubmit(onSubmit)} noValidate action="" >
-                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 450px"}}>
+                    <h2 className="input__title" style={{whiteSpace: "nowrap" , margin:"0 0 500px"}}>
                         Создай аккаунт и получи
                         <br/>
                         30 дней

@@ -4,7 +4,6 @@ import {Link, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 import {getOneFilm} from "../redux/reducers/getOneFilm";
 import {getLikes, deleteLikes, getDisLikes, deleteDisLikes} from "../redux/reducers/cinema";
-import { useLocation } from "react-router-dom";
 
 
 const Film = () => {
@@ -84,7 +83,7 @@ const Film = () => {
                                 </li>
                                 <li className="film__menu-item"><h3 className="film__menu-title">Страна:</h3>
                                     {
-                                       product.country && product.country.map(item => JSON.parse(item)).map((item) => (
+                                       product.country && product.country.map(item => typeof item === "string" ? JSON.parse(item) : item).map((item) => (
                                                 <div key={item.id}>
                                                     <Link to={'/'}>
                                                         <button className="film__year">{item.desc}</button>
@@ -96,7 +95,7 @@ const Film = () => {
                                 </li>
                                 <li className="film__menu-item"><h3 className="film__menu-title">Жанр:</h3>
                                     {
-                                        product.genre && product.genre.map(item => JSON.parse(item)).map((item) => (
+                                        product.genre && product.genre.map(item => typeof item === "string"? JSON.parse(item) : item).map((item) => (
                                             <div key={item.id}>
                                                 <Link to={'/'}>
                                                     <button className="film__year">{item.desc}</button>
@@ -109,7 +108,7 @@ const Film = () => {
                                 <li className="film__menu-item"><h3 className="film__menu-title">Содержание:</h3>
 
                                     {
-                                        product.content && product.content.map(item => JSON.parse(item)).map((item) => (
+                                        product.content && product.content.map(item => typeof item === "string"? JSON.parse(item) : item).map((item) => (
                                             <div key={item.id}>
                                                 <Link to={'/'}>
                                                     <button className="film__year">{item.desc}</button>

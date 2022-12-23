@@ -87,7 +87,7 @@ const Films = () => {
                                     <>
                                         {
                                             content?.length || genre?.length || country?.length ?
-                                                contentFilm.parse.map((item) => (
+                                                contentFilm.map((item) => (
                                                     <div className="films__card">
                                                         <Link  to={`/film/${item.id}`} className="films__card"
                                                               style={{color: "white"}}>
